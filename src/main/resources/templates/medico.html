@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Gerenciamento de Médicos</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <img src="/img/image.png" alt="Logo" class="logo">
+  </header>
+
+  <div id="mensagem-status" style="display: none; margin: 10px auto; text-align: center; font-weight: bold;"></div>
+
+   <br><br><br><br><br><br><br> 
+
+<!-- Modal oculto -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="fechar" onclick="fecharModal()">&times;</span>
+    <h2 id="titulo-modal">Cadastrar Médico</h2>
+    <form id="form-medico" class="form-modal">
+        <input type="hidden" id="medico-id">
+        
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" required>
+      
+        <label for="especialidade">Especialidade:</label>
+        <input type="text" id="especialidade" required>
+      
+        <label for="crm">CRM:</label>
+        <input type="text" id="crm" required>
+      
+        <div class="botoes-form">
+          <button type="submit">Salvar</button>
+        </div>
+      </form>      
+  </div>
+</div>
+
+<hr>
+  <!-- Lista de médicos -->
+  <div class="container-geral">
+    <div class="botao-centro">
+      <button class="btn-cadastrar" onclick="abrirModal()">Cadastrar Médico</button>
+    </div>
+  <h2>Lista de Médicos</h2>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Especialidade</th>
+        <th>CRM</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody id="tabela-medicos">
+      <!-- Médicos serão inseridos aqui -->
+    </tbody>
+  </table>
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 - Consultas Médicas</p>
+  </footer>
+
+  <script src="/js/medico.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Gerenciamento de Pacientes</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <img src="/img/image.png" alt="Logo" class="logo">
+  </header>
+
+   <br><br><br><br><br><br><br> 
+  <!-- Container principal -->
+  <hr>
+  <div class="container-geral paciente-container">
+    <div id="mensagem-status" style="display: none; margin: 10px auto; text-align: center; font-weight: bold;"></div>
+    <div class="botao-centro">
+      <button class="btn-cadastrar" onclick="abrirModal()">Cadastrar Paciente</button>
+    </div>
+
+    <!-- Tabela -->
+    <h2>Lista de Pacientes</h2>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>CPF</th>
+          <th>Data de Nascimento</th>
+          <th>Telefone</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="tabela-pacientes">
+        <!-- Conteúdo dinâmico -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="fechar" onclick="fecharModal()">&times;</span>
+      <h2 id="titulo-modal">Cadastrar Paciente</h2>
+      <form id="form-paciente" class="form-modal">
+        <input type="hidden" id="paciente-id">
+
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" required>
+
+        <label for="cpf">CPF:</label>
+        <input type="text" id="cpf" required>
+
+        <label for="dataNascimento">Data de Nascimento:</label>
+        <input type="date" id="dataNascimento" required>
+
+        <label for="telefone">Telefone:</label>
+        <input type="text" id="telefone" required>
+
+        <div class="botoes-form">
+          <button type="submit">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script src="/js/paciente.js"></script>
+</body>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <p>&copy; 2025 - Consultas Médicas</p>
+</footer>
+</html>

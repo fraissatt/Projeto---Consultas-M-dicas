@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Gerenciamento de Consultas</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <img src="/img/image.png" alt="Logo" class="logo">
+  </header>
+
+  <br><br><br><br><br><br><br>
+  <hr>
+
+  <div class="container-geral consulta-container">
+    <div id="mensagem-status" style="display: none; margin: 10px auto; text-align: center; font-weight: bold;"></div>
+
+    <div class="botao-centro">
+      <button class="btn-cadastrar" onclick="abrirModal()">Agendar Consulta</button>
+    </div>
+
+    <h2>Lista de Consultas</h2>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Data</th>
+          <th>Hora</th>
+          <th>Status</th>
+          <th>Médico</th>
+          <th>Paciente</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="tabela-consultas"></tbody>
+    </table>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="fechar" onclick="fecharModal()">&times;</span>
+      <h2 id="titulo-modal">Agendar Consulta</h2>
+      <form id="form-consulta" class="form-modal">
+        <label for="data">Data:</label>
+        <input type="date" id="data" required>
+
+        <label for="horario">Horário:</label>
+        <input type="time" id="horario" required>
+        <small id="erro-horario" style="color: red; font-size: 13px; margin-top: -8px;"></small>
+
+        <select id="medico" required></select>
+        <select id="paciente" required></select>
+
+        <div class="botoes-form">
+          <button type="submit">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 - Consultas Médicas</p>
+  </footer>
+
+  <script src="/js/consulta.js"></script>
+</body>
+</html>
